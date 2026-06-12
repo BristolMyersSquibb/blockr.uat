@@ -1,0 +1,18 @@
+name: connect-deploy
+
+on:
+  pull_request:
+  merge_group:
+
+jobs:
+  connect-deploy:
+    # Pinned to the cynkra/blockr.ci#25 branch until it merges; flip to @main then.
+    # (The reusable workflow internally references check-suggests@main, which only
+    # exists on blockr.ci main once #25 lands — so real merge_group deploys need #25
+    # merged first; pull_request runs are a no-op and work meanwhile.)
+    uses: cynkra/blockr.ci/.github/workflows/connect-deploy.yaml@24-connect-deploy
+    with:
+      r-version: "4.4.2"
+    secrets:
+      APP_ID: ${{ secrets.CONNECT_DEPLOY_APP_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.CONNECT_DEPLOY_APP_PRIVATE_KEY }}

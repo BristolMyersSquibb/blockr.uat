@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+*.Rproj
+
+# manifest.json is intentionally NOT ignored: the connect-deploy workflow stages
+# it with `git add -A` when publishing the connect-* branch. Keep it off main by
+# not committing a locally generated one, not by gitignoring it.

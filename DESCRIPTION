@@ -1,0 +1,11 @@
+Package: blockr.uat
+Title: blockr User Acceptance Testing App
+Version: 0.0.0.9000
+Description: A blockr board deployed to Posit Connect for user acceptance
+    testing, published via blockr.ci's connect-deploy (pull-mode) pipeline.
+    Structured as an R package so the deploy workflow resolves its runtime
+    dependencies from this DESCRIPTION.
+Imports:
+    blockr.core
+License: GPL-3
+Encoding: UTF-8
