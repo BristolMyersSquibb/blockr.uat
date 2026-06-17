@@ -1,17 +1,34 @@
-library(blockr.core)
+library(blockr)
+library(blockr.assistant)
+library(blockr.md)
+library(blockr.session)
 
-serve(
-  new_board(
-    blocks = c(
-      bod = new_dataset_block("BOD"),
-      chick = new_dataset_block("ChickWeight"),
-      merged = new_merge_block("Time")
-    ),
-    links = c(
-      bod_merged = new_link("bod", "merged", "x"),
-      chick_merged = new_link("chick", "merged", "y")
-    ),
-    stacks = list(inputs = c("bod", "merged"))
+# On Connect, persist boards to the Connect pin store; the manage_project()
+# default board_local() is per-container and ephemeral there. Locally there
+# are no Connect credentials, so fall back to that default and still boot.
+if (nzchar(Sys.getenv("CONNECT_SERVER"))) {
+  options(blockr.session_mgmt_backend = pins::board_connect)
+}
+
+run_app(
+  blocks = c(
+    data = new_dataset_block("mtcars"),
+    plot = new_ggplot_block(type = "point", x = "hp", y = "mpg")
   ),
-  "blockr_uat"
+  links = new_link("data", "plot", "data"),
+  extensions = list(
+    dag = new_dag_extension(),
+    assistant = new_assistant_extension(),
+    doc = new_md_extension(
+      c(
+        "# blockr UAT",
+        "",
+        "Horsepower against fuel economy, embedded live from the board:",
+        "",
+        "![Horsepower vs. miles per gallon](blockr://plot)"
+      )
+    )
+  ),
+  plugins = custom_plugins(manage_project()),
+  id = "blockr_uat"
 )

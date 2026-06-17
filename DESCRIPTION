@@ -1,11 +1,30 @@
 Package: blockr.uat
 Title: blockr User Acceptance Testing App
 Version: 0.0.0.9000
-Description: A blockr board deployed to Posit Connect for user acceptance
+Description: A blockr dock board (DAG, assistant and markdown document panes,
+    with board persistence) deployed to Posit Connect for user acceptance
     testing, published via blockr.ci's connect-deploy (pull-mode) pipeline.
     Structured as an R package so the deploy workflow resolves its runtime
     dependencies from this DESCRIPTION.
 Imports:
-    blockr.core
+    blockr,
+    blockr.assistant,
+    blockr.dag,
+    blockr.ggplot,
+    blockr.md,
+    blockr.session,
+    pins
+Remotes:
+    BristolMyersSquibb/blockr,
+    BristolMyersSquibb/blockr.assistant,
+    BristolMyersSquibb/blockr.core,
+    BristolMyersSquibb/blockr.dag,
+    BristolMyersSquibb/blockr.dock,
+    BristolMyersSquibb/blockr.dplyr,
+    BristolMyersSquibb/blockr.ggplot,
+    BristolMyersSquibb/blockr.io,
+    BristolMyersSquibb/blockr.md,
+    BristolMyersSquibb/blockr.session,
+    BristolMyersSquibb/blockr.ui
 License: GPL-3
 Encoding: UTF-8
