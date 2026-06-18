@@ -4,8 +4,8 @@ A blockr board deployed to Posit Connect for user acceptance testing, published 
 
 ## Contents
 
-- `app.R` — a blockr board (`serve(new_board(...))`); `serve.board()` returns a `shinyApp` object, which is what Connect runs.
-- `DESCRIPTION` — declares runtime dependencies (`Imports: blockr.core`) so the deploy workflow resolves them from the package metadata.
+- `app.R` — a blockr dock board launched through `blockr::run_app()`, with the DAG, assistant and markdown document extensions enabled and board persistence wired up via blockr.session's `manage_project()`. `run_app()` returns the `shinyApp` object Connect runs.
+- `DESCRIPTION` — declares runtime dependencies (`Imports:`) and pins every blockr.* package to its GitHub main branch (`Remotes:`) so the deploy workflow resolves the development versions from the package metadata rather than stale CRAN/release builds.
 - `.github/workflows/connect-deploy.yaml` — calls the reusable `connect-deploy` workflow in `cynkra/blockr.ci`.
 
 ## How deployment works
