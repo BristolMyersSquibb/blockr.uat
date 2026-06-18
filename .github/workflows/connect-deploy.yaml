@@ -14,5 +14,10 @@ jobs:
     with:
       auth: deploy-key
       r-version: "4.4.2"
+      # Pin a dated RHEL 8 (centos8) snapshot for reproducible deploys. The
+      # reusable workflow builds the manifest in a RHEL 8 container and records
+      # this URL verbatim, so Connect installs binaries; it otherwise defaults
+      # to centos8/latest.
+      repos: https://packagemanager.posit.co/cran/__linux__/centos8/2026-06-18
     secrets:
       DEPLOY_KEY: ${{ secrets.CONNECT_DEPLOY_SSH_KEY }}
