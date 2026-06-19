@@ -1,6 +1,21 @@
 Package: blockr.uat
 Title: blockr User Acceptance Testing App
 Version: 0.0.0.9000
+Authors@R:
+    c(person(given = "Nicolas",
+             family = "Bennett",
+             role = c("aut", "cre"),
+             email = "nicolas@cynkra.com"),
+      person(given = "David",
+             family = "Granjon",
+             role = "aut",
+             email = "david@cynkra.com"),
+      person(given = "Christoph",
+             family = "Sax",
+             role = "aut",
+             email = "christoph@cynkra.com"),
+      person(family = "Bristol Myers Squibb",
+             role = "fnd"))
 Description: A blockr dock board (DAG, assistant and markdown document panes,
     with board persistence) deployed to Posit Connect for user acceptance
     testing, published via blockr.ci's connect-deploy (pull-mode) pipeline.
@@ -9,11 +24,16 @@ Description: A blockr dock board (DAG, assistant and markdown document panes,
 Imports:
     blockr,
     blockr.assistant,
+    blockr.core,
     blockr.dag,
     blockr.ggplot,
     blockr.md,
     blockr.session,
     pins
+Suggests:
+    ids,
+    pkgload,
+    testthat (>= 3.0.0)
 Remotes:
     BristolMyersSquibb/blockr,
     BristolMyersSquibb/blockr.assistant,
@@ -28,3 +48,6 @@ Remotes:
     BristolMyersSquibb/blockr.ui
 License: GPL-3
 Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
