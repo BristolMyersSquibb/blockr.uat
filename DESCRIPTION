@@ -30,9 +30,9 @@ Imports:
     blockr.md,
     blockr.session,
     ids,
-    pins
+    pins,
+    pkgload
 Suggests:
-    pkgload,
     testthat (>= 3.0.0)
 Remotes:
     BristolMyersSquibb/blockr,
@@ -51,3 +51,4 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Config/testthat/edition: 3
 Config/roxygen2/version: 8.0.0
+Config/Needs/tests: testthat
