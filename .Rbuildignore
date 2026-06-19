@@ -1,4 +1,3 @@
 ^app\.R$
-^dependencies\.R$
 ^\.github$
 ^manifest\.json$

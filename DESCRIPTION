@@ -29,9 +29,9 @@ Imports:
     blockr.ggplot,
     blockr.md,
     blockr.session,
+    ids,
     pins
 Suggests:
-    ids,
     pkgload,
     testthat (>= 3.0.0)
 Remotes:
