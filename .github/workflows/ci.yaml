@@ -1,0 +1,17 @@
+on:
+  pull_request:
+    branches: main
+  merge_group:
+
+name: ci
+
+jobs:
+  ci:
+    uses: BristolMyersSquibb/blockr.ci/.github/workflows/ci.yaml@main
+    with:
+      # Check against the R version Connect runs the app on, not ci.yaml's
+      # default `release`. Keep in sync with connect-deploy.yaml.
+      r-version: "4.4.2"
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      BLOCKR_PAT: ${{ secrets.BLOCKR_PAT }}

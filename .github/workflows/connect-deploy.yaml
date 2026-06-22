@@ -6,9 +6,7 @@ on:
 
 jobs:
   connect-deploy:
-    # Pinned to the blockr.ci#25 branch until it merges; flip to @main then.
-    # (check-suggests is branch-pinned on #25, so it resolves pre-merge.)
-    uses: BristolMyersSquibb/blockr.ci/.github/workflows/connect-deploy.yaml@24-connect-deploy
+    uses: BristolMyersSquibb/blockr.ci/.github/workflows/connect-deploy.yaml@main
     permissions:
       contents: read
     with:
