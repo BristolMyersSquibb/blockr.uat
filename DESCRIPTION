@@ -29,11 +29,14 @@ Imports:
     blockr.ggplot,
     blockr.md,
     blockr.session,
+    connectapi (>= 0.6.0),
     ids,
     pins,
-    pkgload
+    pkgload,
+    shiny
 Suggests:
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Remotes:
     BristolMyersSquibb/blockr,
     BristolMyersSquibb/blockr.assistant,
@@ -51,4 +54,4 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Config/testthat/edition: 3
 Config/roxygen2/version: 8.0.0
-Config/Needs/tests: testthat
+Config/Needs/tests: testthat, withr
