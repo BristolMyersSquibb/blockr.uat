@@ -13,6 +13,8 @@ The \code{shiny.appobj} that Connect runs.
 Builds the blockr dock board served for user acceptance testing on Posit
 Connect: an \code{mtcars} dataset block feeding a ggplot point block, with the
 DAG, assistant and markdown-document extensions and board persistence. On
-Connect (\code{CONNECT_SERVER} set) persistence uses the Connect pin store;
-elsewhere it keeps the per-container default so the app still boots locally.
+Connect (\code{CONNECT_SERVER} set) each visitor's boards persist to a Connect
+pin store scoped to their own identity, namespaced via the Posit Connect
+user session token; elsewhere it keeps the per-container default so the app
+still boots locally.
 }

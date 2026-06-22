@@ -3,15 +3,17 @@
 #' Builds the blockr dock board served for user acceptance testing on Posit
 #' Connect: an `mtcars` dataset block feeding a ggplot point block, with the
 #' DAG, assistant and markdown-document extensions and board persistence. On
-#' Connect (`CONNECT_SERVER` set) persistence uses the Connect pin store;
-#' elsewhere it keeps the per-container default so the app still boots locally.
+#' Connect (`CONNECT_SERVER` set) each visitor's boards persist to a Connect
+#' pin store scoped to their own identity, namespaced via the Posit Connect
+#' user session token; elsewhere it keeps the per-container default so the app
+#' still boots locally.
 #'
 #' @return The `shiny.appobj` that Connect runs.
 #' @export
 run_app <- function() {
 
   if (nzchar(Sys.getenv("CONNECT_SERVER"))) {
-    options(blockr.session_mgmt_backend = pins::board_connect)
+    options(blockr.session_mgmt_backend = user_pins_board)
   }
 
   blockr::run_app(
