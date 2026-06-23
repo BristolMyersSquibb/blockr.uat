@@ -39,16 +39,16 @@ Suggests:
     withr
 Remotes:
     BristolMyersSquibb/blockr,
-    BristolMyersSquibb/blockr.assistant,
-    BristolMyersSquibb/blockr.core,
-    BristolMyersSquibb/blockr.dag,
-    BristolMyersSquibb/blockr.dock,
+    BristolMyersSquibb/blockr.assistant@10-pin-core-214,
+    BristolMyersSquibb/blockr.core@214-board-loader,
+    BristolMyersSquibb/blockr.dag@10-pin-core-214,
+    BristolMyersSquibb/blockr.dock@10-pin-core-214,
     BristolMyersSquibb/blockr.dplyr,
     BristolMyersSquibb/blockr.ggplot,
     BristolMyersSquibb/blockr.io,
-    BristolMyersSquibb/blockr.md,
-    BristolMyersSquibb/blockr.session,
-    BristolMyersSquibb/blockr.ui
+    BristolMyersSquibb/blockr.md@10-pin-core-214,
+    BristolMyersSquibb/blockr.session@55-board-loader,
+    BristolMyersSquibb/blockr.ui@10-pin-core-214
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
