@@ -31,7 +31,6 @@ Imports:
     blockr.session,
     connectapi (>= 0.6.0),
     ids,
-    pins,
     pkgload,
     shiny
 Suggests:
