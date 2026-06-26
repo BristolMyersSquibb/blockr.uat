@@ -31,9 +31,7 @@ Imports:
     blockr.session,
     connectapi (>= 0.6.0),
     ids,
-    pins,
-    pkgload,
-    shiny
+    pkgload
 Suggests:
     testthat (>= 3.0.0),
     withr

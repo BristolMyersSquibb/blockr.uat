@@ -12,10 +12,6 @@
 #' @export
 run_app <- function() {
 
-  if (nzchar(Sys.getenv("CONNECT_SERVER"))) {
-    options(blockr.session_mgmt_backend = user_pins_board)
-  }
-
   blockr::run_app(
     blocks = c(
       data = blockr.core::new_dataset_block("mtcars"),
@@ -41,3 +37,16 @@ run_app <- function() {
     id = "blockr_uat"
   )
 }
+
+# pkgload (app.R's loader), connectapi (blockr.session's user-scoped
+# Connect pins) and ids (blockr.core's friendly board IDs) are installed
+# for the deploy but called only outside this package. Reference each
+# namespace so R CMD check counts them as used, keeping them in Imports
+# (and so in the Connect manifest). Never run.
+# nocov start
+ignore_unused_imports <- function() {
+  connectapi::connect
+  ids::random_id
+  pkgload::load_all
+}
+# nocov end
