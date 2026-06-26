@@ -12,10 +12,6 @@
 #' @export
 run_app <- function() {
 
-  if (nzchar(Sys.getenv("CONNECT_SERVER"))) {
-    options(blockr.session_mgmt_backend = user_pins_board)
-  }
-
   blockr::run_app(
     blocks = c(
       data = blockr.core::new_dataset_block("mtcars"),
